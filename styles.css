@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #6670cc;
     display: flex;
@@ -7,11 +7,11 @@ body{
     height: 100vh;
 }
 
-.main-container{
+.main-container {
     /* border: 1px solid rgba(255,255,255,0.2); */
     border-radius: 15px;
     /* backdrop-filter: blur(10px); */
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     /* opacity: 0.5; */
     display: flex;
@@ -20,11 +20,12 @@ body{
     width: auto;
 }
 
-.display{
+.display-container {
     border-radius: 15px;
     /* backdrop-filter: blur(10px); */
+    height: 50px;
     background-color: #f5f5f5;
-    padding: 30px;
+    padding: 20px;
     font-size: 30px;
     text-align: right;
     margin-bottom: 18px;
@@ -35,7 +36,9 @@ body{
  flex-direction: column;
 } */
 
-.operator, .number{
+.operator,
+.number,
+.row-1 button {
     width: 75px;
     padding: 20px;
     margin: 2px;
@@ -45,22 +48,24 @@ body{
     /* text-align: center; */
 }
 
-.operator:hover, .number:hover{
+.operator:hover,
+.number:hover,
+.row-1 button:hover {
     transform: scale(1.05);
 }
 
-.row-1 button{
+.row-1 button {
     width: 158px;
     /* border-radius: 8px;
     font-size: 20px; */
     /* box-sizing: border-box; */
 }
 
-.operator{
+.operator,
+.row-1 button {
     background-color: #ffd700;
 }
 
-.number{
+.number {
     background-color: #f5f5f5;
 }
-
