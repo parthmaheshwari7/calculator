@@ -38,7 +38,7 @@ body {
 
 .operator,
 .number,
-.row-1 button {
+.row-1 button, #equal {
     width: 75px;
     padding: 20px;
     margin: 2px;
@@ -50,7 +50,7 @@ body {
 
 .operator:hover,
 .number:hover,
-.row-1 button:hover {
+.row-1 button:hover, #equal:hover {
     transform: scale(1.05);
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .operator,
-.row-1 button {
+.row-1 button, #equal {
     background-color: #ffd700;
 }
 
