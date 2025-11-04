@@ -14,7 +14,7 @@
         <div class="input-container">
             <div class="row-1">
                 <button id ="clear" onclick = "clearDisplay()">CLEAR</button>
-                <button id="delete">DELETE</button>
+                <button id="delete" onclick="del()">DELETE</button>
             </div>
             <div class="row-2">
                 <button class="number" id="seven">7</button>
@@ -26,7 +26,7 @@
                 <button class="number" id="four">4</button>
                 <button class="number" id="five">5</button>
                 <button class="number" id="six">6</button>
-                <button class="operator" id="multiply">x</button>
+                <button class="operator" id="multiply">*</button>
             </div>
             <div class="row-4">
                 <button class="number" id="one">1</button>
@@ -36,7 +36,7 @@
             </div>
             <div class="row-5">
                 <button class="number" id="zero">0</button>
-                <button class="operator" id="decimal">.</button>
+                <button class="operator" id="decimal" onclick = "disableDec()">.</button>
                 <button id="equal" onclick="calculate()">=</button>
                 <button class="operator" id="add">+</button>
             </div>
