@@ -1,9 +1,8 @@
-// bug: cannot work with subtracting two negative numbers (DONE)
 // to do: once a result is displayed, entering any new numbers should clear the display
 
 const display = document.getElementById('display');
 const allButtons = document.querySelectorAll('.number, .operator'); //select all nodes with number and operator class
-let resultDisplayed = false;
+// let resultDisplayed = false;
 
 function init() {
     const validKeys = '0123456789./*+-'
@@ -11,24 +10,12 @@ function init() {
     // display.textContent = "Keyboard supported"
     allButtons.forEach(btn => {
         btn.addEventListener('click', (event) => {
-            // console.log(event.target.textContent);
             if (validKeys.includes(event.target.textContent)) {
-                // if (!resultDisplayed) {
-                //     console.log("resultDisplayed false");
                 display.textContent += btn.textContent;
-                // }
-                // else {
-                //     console.log("resultDisplayed true");
-                //     resultDisplayed = false;
-                //     display.textContent = '';
-                //     display.textContent += btn.textContent;
-                // }
-
             }
             if (event.target.textContent == '=' || event.target.textContent == '+' || event.target.textContent == '-' || event.target.textContent == '*' || event.target.textContent == '/') {
                 calculate(event.target.textContent);
             };
-
         });
     });
     //adding keyboard support
@@ -54,7 +41,7 @@ function calculate(operator = 'Enter') { //Enter is the default argument
     for (const key in operators) {
         if (display.textContent.includes(key)) {
             if (display.textContent.charAt(0) == "-") {
-                console.log("neg at index 0 found");
+                // console.log("neg at index 0 found");
                 strClean = display.textContent.slice(1, -1);
                 strSplit = strClean.split(key);
                 strSplit[0] = '-' + strSplit[0];
@@ -64,9 +51,6 @@ function calculate(operator = 'Enter') { //Enter is the default argument
                 strSplit = strClean.split(key);
             }
             if (operator != 'Enter') {
-                // let strClean = display.textContent.slice(0, -1);
-                // let strSplit = strClean.split(key);
-                // console.log(strSplit);
                 //error handling for only calculating result when two numbers and an operator are present
                 let strHasNaN = false;
                 for (i = 0; i < 2; i++) {
@@ -90,14 +74,8 @@ function calculate(operator = 'Enter') { //Enter is the default argument
                 }
                 else {
                     strSplit = display.textContent.split(key);
-                    // strSplit = strClean.split(key);
                 }
-
-                // strClean = display.textContent.slice(1);
-                // strSplit = strClean.split(key);
-                // strSplit[0] = '-' + strSplit[0];
-
-                console.log(strSplit);
+                // console.log(strSplit);
                 //error handling for only calculating result when two numbers and an operator are present
                 let strHasNaN = false;
                 for (i = 0; i < 2; i++) {
@@ -113,10 +91,8 @@ function calculate(operator = 'Enter') { //Enter is the default argument
                     operators[key](Number(strSplit[0]), Number(strSplit[1]), ''); //calling the appropriate DMAS function
                 }
             }
-
         }
     }
-
 };
 
 function clearDisplay() {
@@ -130,20 +106,16 @@ function del() {
 
 function add(a, b, c) {
     display.textContent = a + b + `${c}`;
-    resultDisplayed = true;
 };
 
 function subtract(a, b, c) {
     display.textContent = a - b + `${c}`;
-    resultDisplayed = true;
 };
 
 function multiply(a, b, c) {
     display.textContent = (a * b) + `${c}`;
-    resultDisplayed = true;
 };
 
 function divide(a, b, c) {
     display.textContent = (a / b) + `${c}`;
-    resultDisplayed = true;
 };
